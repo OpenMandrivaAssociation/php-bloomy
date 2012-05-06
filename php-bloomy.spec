@@ -11,6 +11,7 @@ Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/bloomy/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
+Patch0:		bloomy-0.1.0-php54x.diff
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	apache-devel >= 2.2.0
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -24,6 +25,8 @@ member of a set.
 
 %setup -q -n %{modname}-%{version}
 [ "../package*.xml" != "/" ] && mv ../package*.xml .
+
+%patch0 -p0
 
 %build
 %serverbuild
