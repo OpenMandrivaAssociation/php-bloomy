@@ -1,0 +1,24 @@
+
+http://svn.php.net/viewvc/pecl/bloomy/trunk/php_bloomy.c?r1=277714&r2=323508
+
+--- php_bloomy.c	2009-03-23 23:56:59.000000000 +0100
++++ php_bloomy.c.oden	2012-05-06 14:19:05.684806621 +0200
+@@ -205,12 +205,18 @@ zend_object_value php_bloom_new(zend_cla
+ {
+     zend_object_value retval;
+     php_bloom_t *obj;
++#if PHP_VERSION_ID < 50399
+     zval *tmp;
++#endif
+ 
+     obj = (php_bloom_t *) emalloc(sizeof(*obj));
+ 	memset(obj, 0, sizeof(*obj));
+ 	zend_object_std_init(&obj->zo, ce TSRMLS_CC);
++#if PHP_VERSION_ID < 50399
+     zend_hash_copy(obj->zo.properties, &ce->default_properties, (copy_ctor_func_t) zval_add_ref, (void *) &tmp, sizeof(zval *));
++#else
++    object_properties_init(&obj->zo, ce);
++#endif
+ 
+     retval.handle = zend_objects_store_put(obj, (zend_objects_store_dtor_t)zend_objects_destroy_object, (zend_objects_free_object_storage_t)php_bloom_free_storage, NULL TSRMLS_CC);
+     retval.handlers = zend_get_std_object_handlers();
