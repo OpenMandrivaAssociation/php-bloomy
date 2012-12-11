@@ -70,3 +70,62 @@ rm -rf %{buildroot}
 %config(noreplace) %attr(0644,root,root) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
 
+
+
+%changelog
+* Sun May 06 2012 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-13mdv2012.0
++ Revision: 797128
+- fix build
+- rebuild for php-5.4.x
+
+* Sun Jan 15 2012 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-12
++ Revision: 761203
+- rebuild
+
+* Wed Aug 24 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-11
++ Revision: 696396
+- rebuilt for php-5.3.8
+
+* Fri Aug 19 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-10
++ Revision: 695368
+- rebuilt for php-5.3.7
+
+* Sat Mar 19 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-9
++ Revision: 646615
+- rebuilt for php-5.3.6
+
+* Sat Jan 08 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-8mdv2011.0
++ Revision: 629768
+- rebuilt for php-5.3.5
+
+* Mon Jan 03 2011 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-7mdv2011.0
++ Revision: 628070
+- ensure it's built without automake1.7
+
+* Wed Nov 24 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-6mdv2011.0
++ Revision: 600464
+- rebuild
+
+* Sun Oct 24 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-5mdv2011.0
++ Revision: 588746
+- rebuild
+
+* Fri Mar 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-4mdv2010.1
++ Revision: 514520
+- rebuilt for php-5.3.2
+
+* Sat Jan 02 2010 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-3mdv2010.1
++ Revision: 485341
+- rebuilt for php-5.3.2RC1
+
+* Sat Nov 21 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-2mdv2010.1
++ Revision: 468147
+- rebuilt against php-5.3.1
+
+* Sat Oct 03 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-1mdv2010.0
++ Revision: 452902
+- import php-bloomy
+
+
+* Sat Oct 03 2009 Oden Eriksson <oeriksson@mandriva.com> 0.1.0-1mdv2010.0
+- initial Mandriva package
